@@ -19,12 +19,12 @@ Tools & Platforms: Git / Godot
 <b>Featured Projects</b>
 <p>Here are a few projects I'm particularly proud of.</p>
 
-<b>Project 1: Frognerd</b>
-<b>Description: </b><p>A frogger-like game with some added explosive interactivity made in Godot</p>
+<b>Project 1: Frognerd</b><br>
+<b>Description: </b>A frogger-like game with some added explosive interactivity made in Godot
 <iframe frameborder="0" src="https://itch.io/embed/3828125" width="552" height="167"><a href="https://nautrobot.itch.io/frognerd">Frognerd by NautRobot</a></iframe>
 
-<b>Project 2: Sandboy</b>
-<b>Description: </b><p>A platformer game about controlling time made in Godot</p>
+<b>Project 2: Sandboy</b><br>
+<b>Description: </b>A platformer game about controlling time made in Godot
 <iframe frameborder="0" src="https://itch.io/embed/3857582" width="552" height="167"><a href="https://nautrobot.itch.io/sandboy">Sandboy by NautRobot</a></iframe>
 
 Contact
