@@ -80,7 +80,7 @@
         <div class="bg-gray-50 dark:bg-gray-700 rounded-xl p-6 mb-8 shadow-md">
             <h3 class="font-bold text-3xl mb-4">🐸 Frognerd</h3>
             <p class="text-lg">
-                Remember the classic game Frogger? Well, I put my own explosives in it with <b class="font-semibold text-blue-500 dark:text-blue-400">Frognerd</b>! It's a fun variation of the classic game about helping a frog cross a busy road, but with the added chaos of landmines and a few surprises. I'm really proud of this project because it's a great example of how I'm learning to use core programming concepts to build something fun and challenging.
+                Remember the classic game Frogger? Well, I put my own explosive spin on it with <b class="font-semibold text-blue-500 dark:text-blue-400">Frognerd</b>! It's a fun variation of the classic game about helping a nerdy frog cross a busy road, but with the added chaos of bombs and a few surprises. I'm really proud of this project because it's a great example of how I'm learning to use core programming concepts to build something fun and challenging.
             </p>
 
             <iframe frameborder="0" src="https://itch.io/embed/3828125" width="100%" height="167" class="mt-6 rounded-lg shadow-inner">
@@ -100,14 +100,14 @@ var trauma_power = 2</code></pre>
                 <div>
                     <h4 class="font-bold text-xl mb-2">Improving the Game with Logic (Conditionals)</h4>
                     <p>
-                        I used conditional statements to check which tile to spawn. Based on what a random number generator created, an <code>if</code> statement would determine whether to place a road, a safe space, or something else on the screen, making sure the game was always unpredictable.
+                        I used conditional statements to check which tile to spawn. Based on what a random number generator created, an <code>if</code> statement would determine whether to place a car, a log, or something else on the screen, making sure the game was always unpredictable.
                     </p>
                     <pre class="code-block mt-3"><code># Example of a conditional used for spawning tiles
 var random_tile_type = randi() % 3
 if random_tile_type == 0:
     spawn_car()
 elif random_tile_type == 1:
-    spawn_road()
+    spawn_log()
 else:
     spawn_empty_space()
 </code></pre>
@@ -132,6 +132,71 @@ else:
             <iframe frameborder="0" src="https://itch.io/embed/3857582" width="100%" height="167" class="mt-6 rounded-lg shadow-inner">
                 <a href="https://nautrobot.itch.io/sandboy">Sandboy by NautRobot</a>
             </iframe>
+            
+            <!-- New details about Sandboy -->
+            <div class="mt-6 space-y-6">
+                <div>
+                    <h4 class="font-bold text-xl mb-2">Bringing Complexity with Variables</h4>
+                    <p>
+                        The core of Sandboy is manipulating time, and I used variables to make this a central, dynamic mechanic. A variable called <code>time_scale</code> is what everything that moves in the game is multiplied by. This allows me to slow down or speed up all game elements at once. Using constants like <code>SLOW_TIME</code>, <code>NORMAL_TIME</code>, and <code>FAST_TIME</code> makes the code cleaner and easier to read, ensuring that the time values are consistent throughout the game.
+                    </p>
+                    <pre class="code-block mt-3"><code>var time = 2
+var time_scale: float = NORMAL_TIME
+const SLOW_TIME: float = 0.5
+const NORMAL_TIME: float = 0.85
+const FAST_TIME: float = 1</code></pre>
+                </div>
+                <div>
+                    <h4 class="font-bold text-xl mb-2">Improving the Game with Logic (Conditionals)</h4>
+                    <p>
+                        I used conditional statements to determine how time should affect the player and the game world based on player input. The game checks which direction the player is moving, and if they are pressing the "walk left" or "walk right" buttons, it changes the <code>time_scale</code> accordingly. This allows the player to feel like they are directly controlling time.
+                    </p>
+                    <pre class="code-block mt-3"><code>	if direction:
+		velocity.x = direction * walkspeed * time_scale
+		
+		if Input.is_action_pressed("walk_L"):
+			time = 1
+			time_scale = SLOW_TIME
+			set_vignette(slow_vignette, 0.28)
+		elif Input.is_action_pressed("walk_R"):
+			time = 3
+			time_scale = FAST_TIME
+			set_vignette(fast_vignette, 0.28)
+			
+		anims.play("move")
+	else:
+		time = 2
+		time_scale = NORMAL_TIME
+		velocity.x = move_toward(velocity.x, 0, walkspeed)
+		anims.play("idle")
+		set_vignette(null, 0)</code></pre>
+                </div>
+                <div>
+                    <h4 class="font-bold text-xl mb-2">Simplifying Code with Functions</h4>
+                    <p>
+                        Functions were essential for managing the complexity of the levels. For example, I created a function called <code>spawn_solid_row()</code> to automatically generate a row of solid blocks at certain points in the game. This provides the player with a short break from the moving platforms, and by putting this logic into a function, I avoided repeating the same code multiple times, making it much more efficient.
+                    </p>
+                    <pre class="code-block mt-3"><code>func spawn_solid_row(y: float):
+	var plat_width = 100 # Adjust this based on your solid platform's width
+	var screen_width = get_viewport().size.x
+	var num_platforms = ceil(screen_width / plat_width) + 1 # Spawn enough to cover the screen
+	
+	for i in range(int(num_platforms)):
+		var plat = solid_platform_scene.instantiate()
+		plat.position = Vector2(i * plat_width, y)
+		add_child(plat)
+		platforms.append(plat)
+	
+	trigger_screenshake(15.0, 0.3, 5.0) # Shake the screen to signal a new level</code></pre>
+                </div>
+                <div>
+                    <h4 class="font-bold text-xl mb-2">Using Arrays to Manage Platforms</h4>
+                    <p>
+                        To effectively control the many platforms in the game, I used an array. This allowed me to store all the platform objects in a single list, making it easy to perform actions on all of them at once, such as moving them or checking their positions.
+                    </p>
+                    <pre class="code-block mt-3"><code>var platforms = []</code></pre>
+                </div>
+            </div>
         </div>
 
         <hr class="my-12 border-t-2 border-gray-200 dark:border-gray-700">
