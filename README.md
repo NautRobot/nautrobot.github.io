@@ -1,33 +1,159 @@
-# nautrobot.github.io
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zeke's Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            @apply bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-100;
+        }
+        .container-card {
+            @apply bg-white dark:bg-gray-800 shadow-xl rounded-2xl p-6 md:p-12 transition-all duration-300;
+        }
+        .section-heading {
+            @apply text-2xl font-bold mb-4 md:mb-6 mt-8 md:mt-12 text-gray-900 dark:text-white;
+        }
+        .code-block {
+            @apply bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-gray-200 p-4 rounded-lg font-mono text-sm overflow-x-auto;
+        }
+    </style>
+</head>
+<body class="flex justify-center items-center min-h-screen">
 
+<main class="w-full max-w-4xl mx-auto p-4 md:p-8">
+    <div class="container-card">
 
-👋 Hello, I'm Zeke!
-About Me
-I'm a high school student and a self-taught developer specializing in FRC robot development and the occasional game development. I enjoy building projects in my free time. I'm always looking for something new to make, always exploring new technologies and improving my skills.
+        <!-- Header and About Section -->
+        <div class="flex flex-col md:flex-row items-center justify-between mb-8 md:mb-12">
+            <div class="text-center md:text-left">
+                <h1 class="text-5xl md:text-6xl font-extrabold text-blue-600 dark:text-blue-400">Hello, I'm Zeke!</h1>
+                <p class="mt-4 text-lg max-w-prose">
+                    I'm a high school student and a self-taught developer specializing in FRC robot development and the occasional game development. I enjoy building projects in my free time. I'm always looking for something new to make, always exploring new technologies and improving my skills.
+                </p>
+                <p class="mt-2 text-lg max-w-prose">
+                    When I'm not coding, I'm often outside. I'm also proud to have a game on itch.io! You can check out my project, Frognerd, at:
+                    <a href="https://nautrobot.itch.io/frognerd" target="_blank" class="text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-500 font-semibold underline">nautrobot.itch.io/frognerd</a>.
+                </p>
+            </div>
+            <img src="https://placehold.co/150x150/2563EB/ffffff?text=Zeke" alt="Zeke's Profile Picture" class="rounded-full mt-6 md:mt-0 md:ml-8 shadow-md">
+        </div>
 
-When I'm not coding, I'm often outside. I'm also proud to have a game on itch.io! You can check out my project, Frognerd, at: https://nautrobot.itch.io/frognerd.
+        <!-- Skills Section -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="p-6 rounded-xl bg-gray-50 dark:bg-gray-700 shadow-sm">
+                <h3 class="font-bold text-xl mb-2">Languages</h3>
+                <ul class="list-disc list-inside space-y-1">
+                    <li>GDScript</li>
+                    <li>Java</li>
+                    <li>C#</li>
+                </ul>
+            </div>
+            <div class="p-6 rounded-xl bg-gray-50 dark:bg-gray-700 shadow-sm">
+                <h3 class="font-bold text-xl mb-2">Frameworks & Libraries</h3>
+                <ul class="list-disc list-inside space-y-1">
+                    <li>Wpilib</li>
+                    <li>Unity</li>
+                </ul>
+            </div>
+            <div class="p-6 rounded-xl bg-gray-50 dark:bg-gray-700 shadow-sm">
+                <h3 class="font-bold text-xl mb-2">Tools & Platforms</h3>
+                <ul class="list-disc list-inside space-y-1">
+                    <li>Git</li>
+                    <li>Godot</li>
+                </ul>
+            </div>
+        </div>
 
-My Skills
-Languages: GDScript, Java, and C#
+        <hr class="my-12 border-t-2 border-gray-200 dark:border-gray-700">
 
-Frameworks & Libraries: Wpilib, Unity
+        <!-- Featured Projects Section -->
+        <h2 class="section-heading text-center">Featured Projects</h2>
+        <p class="text-center text-lg mb-8">Here are a few projects I'm particularly proud of.</p>
 
-Databases: NONE :(
+        <!-- Project 1: Frognerd -->
+        <div class="bg-gray-50 dark:bg-gray-700 rounded-xl p-6 mb-8 shadow-md">
+            <h3 class="font-bold text-3xl mb-4">🐸 Frognerd</h3>
+            <p class="text-lg">
+                Remember the classic game Frogger? Well, I put my own explosive spin on it with <b class="font-semibold text-blue-500 dark:text-blue-400">Frognerd</b>! It's a fun variation of the classic game about helping a nerdy frog cross a busy road, but with the added chaos of bombs and a few surprises. I'm really proud of this project because it's a great example of how I'm learning to use core programming concepts to build something fun and challenging.
+            </p>
 
-Tools & Platforms: Git / Godot
+            <iframe frameborder="0" src="https://itch.io/embed/3828125" width="100%" height="167" class="mt-6 rounded-lg shadow-inner">
+                <a href="https://nautrobot.itch.io/frognerd">Frognerd by NautRobot</a>
+            </iframe>
 
-<b>Featured Projects</b>
-<p>Here are a few projects I'm particularly proud of.</p>
+            <!-- New details about Frognerd -->
+            <div class="mt-6 space-y-6">
+                <div>
+                    <h4 class="font-bold text-xl mb-2">Bringing Complexity with Variables</h4>
+                    <p>
+                        I used variables to make the difficulty change as the game went on and to store which tiles were generated. A great example of this is the camera's trauma system, where variables like <code>trauma</code> and <code>trauma_power</code> make the camera shake more intensely as the frog takes damage.
+                    </p>
+                    <pre class="code-block mt-3"><code>var trauma = 0.0
+var trauma_power = 2</code></pre>
+                </div>
+                <div>
+                    <h4 class="font-bold text-xl mb-2">Improving the Game with Logic (Conditionals)</h4>
+                    <p>
+                        I used conditional statements to check which tile to spawn. Based on what a random number generator created, an <code>if</code> statement would determine whether to place a car, a log, or something else on the screen, making sure the game was always unpredictable.
+                    </p>
+                    <pre class="code-block mt-3"><code># Example of a conditional used for spawning tiles
+var random_tile_type = randi() % 3
+if random_tile_type == 0:
+    spawn_car()
+elif random_tile_type == 1:
+    spawn_log()
+else:
+    spawn_empty_space()
+</code></pre>
+                </div>
+                <div>
+                    <h4 class="font-bold text-xl mb-2">Simplifying Code with Functions</h4>
+                    <p>
+                        I kept my code organized by putting things that were used often into functions with good, descriptive names. For example, the <code>add_trauma()</code> function is a simple way to increase the camera's shake, which is a great way to make the game feel more impactful.
+                    </p>
+                    <pre class="code-block mt-3"><code>func add_trauma(amount):
+    trauma = min(trauma + amount, 1.0)</code></pre>
+                </div>
+            </div>
+        </div>
 
-<b>Project 1: Frognerd</b><br>
-<b>Description: </b>A frogger-like game with some added explosive interactivity made in Godot
-<iframe frameborder="0" src="https://itch.io/embed/3828125" width="552" height="167"><a href="https://nautrobot.itch.io/frognerd">Frognerd by NautRobot</a></iframe>
+        <!-- Project 2: Sandboy -->
+        <div class="bg-gray-50 dark:bg-gray-700 rounded-xl p-6 mb-8 shadow-md">
+            <h3 class="font-bold text-3xl mb-4">⏳ Sandboy</h3>
+            <p class="text-lg">
+                A platformer game about controlling time made in Godot.
+            </p>
+            <iframe frameborder="0" src="https://itch.io/embed/3857582" width="100%" height="167" class="mt-6 rounded-lg shadow-inner">
+                <a href="https://nautrobot.itch.io/sandboy">Sandboy by NautRobot</a>
+            </iframe>
+        </div>
 
-<b>Project 2: Sandboy</b><br>
-<b>Description: </b>A platformer game about controlling time made in Godot
-<iframe frameborder="0" src="https://itch.io/embed/3857582" width="552" height="167"><a href="https://nautrobot.itch.io/sandboy">Sandboy by NautRobot</a></iframe>
+        <hr class="my-12 border-t-2 border-gray-200 dark:border-gray-700">
 
-Contact
-Email: [s1002796@student.knoxschools.org] OR [mewto612@gmail.com]
+        <!-- Contact Section -->
+        <div class="text-center">
+            <h2 class="section-heading inline-block">Contact</h2>
+            <div class="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-8 mt-4 text-lg">
+                <p>
+                    <a href="mailto:s1002796@student.knoxschools.org" class="font-semibold text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-500 underline">s1002796@student.knoxschools.org</a>
+                </p>
+                <p>
+                    <a href="mailto:mewto612@gmail.com" class="font-semibold text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-500 underline">mewto612@gmail.com</a>
+                </p>
+                <p>
+                    <a href="https://nautrobot.github.io" target="_blank" class="font-semibold text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-500 underline">nautrobot.github.io</a>
+                </p>
+            </div>
+        </div>
 
-Portfolio Website: [nautrobot.github.io]
+    </div>
+</main>
+
+</body>
+</html>
