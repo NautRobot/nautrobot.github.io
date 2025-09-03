@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zeke's Portfolio</title>
+    <title>Ezekiel's Portfolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
@@ -80,7 +80,7 @@
         <div class="bg-gray-50 dark:bg-gray-700 rounded-xl p-6 mb-8 shadow-md">
             <h3 class="font-bold text-3xl mb-4">🐸 Frognerd</h3>
             <p class="text-lg">
-                Remember the classic game Frogger? Well, I put my own explosive spin on it with <b class="font-semibold text-blue-500 dark:text-blue-400">Frognerd</b>! It's a fun variation of the classic game about helping a nerdy frog cross a busy road, but with the added chaos of bombs and a few surprises. I'm really proud of this project because it's a great example of how I'm learning to use core programming concepts to build something fun and challenging.
+                Remember the classic game Frogger? Well, I put my own explosives in it with <b class="font-semibold text-blue-500 dark:text-blue-400">Frognerd</b>! It's a fun variation of the classic game about helping a frog cross a busy road, but with the added chaos of landmines and a few surprises. I'm really proud of this project because it's a great example of how I'm learning to use core programming concepts to build something fun and challenging.
             </p>
 
             <iframe frameborder="0" src="https://itch.io/embed/3828125" width="100%" height="167" class="mt-6 rounded-lg shadow-inner">
@@ -100,14 +100,14 @@ var trauma_power = 2</code></pre>
                 <div>
                     <h4 class="font-bold text-xl mb-2">Improving the Game with Logic (Conditionals)</h4>
                     <p>
-                        I used conditional statements to check which tile to spawn. Based on what a random number generator created, an <code>if</code> statement would determine whether to place a car, a log, or something else on the screen, making sure the game was always unpredictable.
+                        I used conditional statements to check which tile to spawn. Based on what a random number generator created, an <code>if</code> statement would determine whether to place a road, a safe space, or something else on the screen, making sure the game was always unpredictable.
                     </p>
                     <pre class="code-block mt-3"><code># Example of a conditional used for spawning tiles
 var random_tile_type = randi() % 3
 if random_tile_type == 0:
     spawn_car()
 elif random_tile_type == 1:
-    spawn_log()
+    spawn_road()
 else:
     spawn_empty_space()
 </code></pre>
