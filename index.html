@@ -76,7 +76,7 @@
         <div class="bg-gray-50 dark:bg-gray-700 rounded-xl p-6 mb-8 shadow-md">
             <h3 class="font-bold text-3xl mb-4">🐸 Frognerd</h3>
             <p class="text-lg">
-                Remember the classic game Frogger? Well, I put my own explosive spin on it with <b class="font-semibold text-blue-500 dark:text-blue-400">Frognerd</b>! It's a fun variation of the classic game about helping a nerdy frog cross a busy road, but with the added chaos of bombs and a few surprises. I'm really proud of this project because it's a great example of how I'm learning to use core programming concepts to build something fun and challenging.
+                Remember the classic game Frogger? Well, I put my own explosive spin on it with <span class="font-semibold text-blue-500 dark:text-blue-400">Frognerd</span>! It's a fun variation of the classic game about helping a nerdy frog cross a busy road, but with the added chaos of bombs and a few surprises. I'm really proud of this project because it's a great example of how I'm learning to use core programming concepts to build something fun and challenging.
             </p>
 
             <iframe frameborder="0" src="https://itch.io/embed/3828125" width="100%" height="167" class="mt-6 rounded-lg shadow-inner">
@@ -131,7 +131,7 @@ else:
                 <div>
                     <h4 class="font-bold text-xl mb-2">Bringing Complexity with Variables</h4>
                     <p>
-                        The core of Sandboy is manipulating time, and I used variables to make this a central, dynamic mechanic. A variable called <code>time_scale</code> is what everything that moves in the game is multiplied by. This allows me to slow down or speed up all game elements at once. Using constants like <code>SLOW_TIME</code>, <code>NORMAL_TIME</code>, and <code>FAST_TIME</code> makes the code cleaner and easier to read, ensuring that the time values are consistent throughout the game.
+                        The core of Sandboy is manipulating time, and I used variables to make this a central, dynamic mechanic. A variable called <code>time_scale</code> is what everything that moves in the game is multiplied by. This allows me to slow down or speed up all game elements at once. Using constants like <span class="font-semibold">SLOW\_TIME</span>, <span class="font-semibold">NORMAL\_TIME</span>, and <span class="font-semibold">FAST\_TIME</span> makes the code cleaner and easier to read, ensuring that the time values are consistent throughout the game.
                     </p>
                     <pre class="code-block mt-3"><code>var time = 2
 var time_scale: float = NORMAL_TIME
@@ -197,7 +197,7 @@ const FAST_TIME: float = 1</code></pre>
             
             <h4 class="font-bold text-xl mb-2 mt-4 text-gray-900 dark:text-white">Project Overview</h4>
             <p class="text-lg">
-                I was tasked with creating a game based on popular books in our school library. I chose to build **Ex-BoBomb On Time**, a **rhythm-based fighting game** inspired by the fast-paced action and musical themes of the *Scott Pilgrim* graphic novels. My design philosophy was centered on translating the core comic-book combat experience into a tight, rhythmic loop where timing is everything. I programmed the majority of the game's mechanics myself, with asset and minor logic assistance from a teammate.
+                I was tasked with creating a game based on popular books in our school library. I chose to build <span class="font-semibold text-blue-500 dark:text-blue-400">Ex-BoBomb On Time</span>, a <span class="font-semibold">rhythm-based fighting game</span> inspired by the fast-paced action and musical themes of the *Scott Pilgrim* graphic novels. My design philosophy was centered on translating the core comic-book combat experience into a tight, rhythmic loop where timing is everything. I programmed the majority of the game's mechanics myself, with asset and minor logic assistance from a teammate.
             </p>
 
             <h4 class="font-bold text-xl mb-2 mt-6 text-gray-900 dark:text-white">Retrospective & My Contribution</h4>
@@ -213,11 +213,10 @@ const FAST_TIME: float = 1</code></pre>
                 </div>
                 
                 <div>
-                    <h4 class="font-bold text-xl mb-2">Play the Game (Coming Soon!)</h4>
-                    <iframe frameborder="0" src="https://itch.io/embed/0000000" width="100%" height="167" class="mt-2 rounded-lg shadow-inner bg-gray-200 dark:bg-gray-700">
-                        <a href="#">Ex-BoBomb On Time by Zeke (Itch.io link placeholder)</a>
+                    <h4 class="font-bold text-xl mb-2">Play the Game!</h4>
+                    <iframe frameborder="0" src="https://itch.io/embed-upload/15234135?color=E49E00" allowfullscreen="" width="100%" height="380" class="mt-2 rounded-lg shadow-inner bg-gray-200 dark:bg-gray-700">
+                        <a href="https://nautrobot.itch.io/ex-bobomb-on-time">Play Ex-BoBomb On Time on itch.io</a>
                     </iframe>
-                    <p class="text-xs text-center mt-2 text-gray-500 dark:text-gray-400">The game will be available here soon!</p>
                 </div>
             </div>
 
@@ -227,7 +226,7 @@ const FAST_TIME: float = 1</code></pre>
                 <div>
                     <h4 class="font-bold text-xl mb-2">Key Variable: Global.onBeat</h4>
                     <p>
-                        The **<code>Global.onBeat</code>** variable is fundamental to the rhythm mechanic. It is a boolean (`true`/`false`) that acts as a gate. When `true`, the player's attacks can land; when `false`, any attack will register as a miss. This simple variable is responsible for enforcing the core **rhythm challenge** of the game.
+                        The <span class="font-semibold">Global.onBeat</span> variable is fundamental to the rhythm mechanic. It is a boolean (<code>true</code>/<code>false</code>) that acts as a gate. When <code>true</code>, the player's attacks can land; when <code>false</code>, any attack will register as a miss. This simple variable is responsible for enforcing the core <span class="font-semibold">rhythm challenge</span> of the game.
                     </p>
                     <pre class="code-block mt-3"><code>var onBeat = false  # Initial state
 # This variable changes state on every beat of the music timer.</code></pre>
@@ -236,7 +235,7 @@ const FAST_TIME: float = 1</code></pre>
                 <div>
                     <h4 class="font-bold text-xl mb-2">Conditional Logic: Screen Boundaries</h4>
                     <p>
-                        This conditional statement checks if the player's position on the x-axis is too far to the left (off-screen). If the condition is met, it uses **lerping (linear interpolation)** to smoothly pull the player back into the visible game area. This sophisticated logic makes the game more complex by preventing players from leaving the arena, which is crucial for a 2D fighting environment.
+                        This conditional statement checks if the player's position on the x-axis is too far to the left (off-screen). If the condition is met, it uses <span class="font-semibold">lerping (linear interpolation)</span> to smoothly pull the player back into the visible game area. This sophisticated logic makes the game more complex by preventing players from leaving the arena, which is crucial for a 2D fighting environment.
                     </p>
                     <pre class="code-block mt-3"><code>if (position.x < -42 + off_screen_lerp):
     # Logic to move the character back onto the screen smoothly</code></pre>
@@ -245,7 +244,7 @@ const FAST_TIME: float = 1</code></pre>
                 <div>
                     <h4 class="font-bold text-xl mb-2">Streamlined Function: take_dmg()</h4>
                     <p>
-                        The **<code>take_dmg()</code>** function centralizes all the logic for when an entity takes damage. This is highly effective because it prevents code repetition across multiple enemy and player scripts. It handles four key actions at once: **instantiating a damage label**, **updating the health value**, **applying a damage number**, and **updating the score** (with a difficulty bonus). This makes the code much cleaner and easier to read.
+                        The <span class="font-semibold">take\_dmg()</span> function centralizes all the logic for when an entity takes damage. This is highly effective because it prevents code repetition across multiple enemy and player scripts. It handles four key actions at once: <span class="font-semibold">instantiating a damage label</span>, <span class="font-semibold">updating the health value</span>, <span class="font-semibold">applying a damage number</span>, and <span class="font-semibold">updating the score</span> (with a difficulty bonus). This makes the code much cleaner and easier to read.
                     </p>
                     <pre class="code-block mt-3"><code>func take_dmg() -> void:
     var damage_label = damageLabelScene.instantiate()
@@ -262,7 +261,7 @@ const FAST_TIME: float = 1</code></pre>
                 <div class="bg-gray-100 dark:bg-gray-700 p-4 rounded-lg">
                     <h4 class="font-bold text-xl mb-2">CAD Model (Future Asset)</h4>
                     <p>
-                        *I am planning to publish a render of the arcade cabinet. Once the model is complete, the render and a link to the CAD file (Autodesk Fusion360) will be placed here to demonstrate some design skills.*
+                        *I am planning to publish the arcade cabinet's CAD. Once the model is complete, the render and a link to the CAD file (Autodesk Fusion 360) will be placed here to demonstrate my mechanical design skills.*
                     </p>
                     <a href="#" class="text-sm text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-500 font-semibold underline mt-2 inline-block">CAD Link Placeholder</a>
                 </div>
