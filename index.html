@@ -29,7 +29,6 @@
 <main class="w-full max-w-4xl mx-auto p-4 md:p-8">
     <div class="container-card">
 
-        <!-- Header and About Section -->
         <div class="flex flex-col md:flex-row items-center justify-between mb-8 md:mb-12">
             <div class="text-center md:text-left">
                 <h1 class="text-5xl md:text-6xl font-extrabold text-blue-600 dark:text-blue-400">Hello, I'm Zeke!</h1>
@@ -44,7 +43,6 @@
             <img src="https://placehold.co/150x150/2563EB/ffffff?text=Zeke" alt="Zeke's Profile Picture" class="rounded-full mt-6 md:mt-0 md:ml-8 shadow-md">
         </div>
 
-        <!-- Skills Section -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <div class="p-6 rounded-xl bg-gray-50 dark:bg-gray-700 shadow-sm">
                 <h3 class="font-bold text-xl mb-2">Languages</h3>
@@ -72,11 +70,9 @@
 
         <hr class="my-12 border-t-2 border-gray-200 dark:border-gray-700">
 
-        <!-- Featured Projects Section -->
         <h2 class="section-heading text-center">Featured Projects</h2>
         <p class="text-center text-lg mb-8">Here are a few projects I'm particularly proud of.</p>
 
-        <!-- Project 1: Frognerd -->
         <div class="bg-gray-50 dark:bg-gray-700 rounded-xl p-6 mb-8 shadow-md">
             <h3 class="font-bold text-3xl mb-4">🐸 Frognerd</h3>
             <p class="text-lg">
@@ -87,7 +83,6 @@
                 <a href="https://nautrobot.itch.io/frognerd">Frognerd by NautRobot</a>
             </iframe>
 
-            <!-- New details about Frognerd -->
             <div class="mt-6 space-y-6">
                 <div>
                     <h4 class="font-bold text-xl mb-2">Bringing Complexity with Variables</h4>
@@ -123,7 +118,6 @@ else:
             </div>
         </div>
 
-        <!-- Project 2: Sandboy -->
         <div class="bg-gray-50 dark:bg-gray-700 rounded-xl p-6 mb-8 shadow-md">
             <h3 class="font-bold text-3xl mb-4">⏳ Sandboy</h3>
             <p class="text-lg">
@@ -133,7 +127,6 @@ else:
                 <a href="https://nautrobot.itch.io/sandboy">Sandboy by NautRobot</a>
             </iframe>
             
-            <!-- New details about Sandboy -->
             <div class="mt-6 space-y-6">
                 <div>
                     <h4 class="font-bold text-xl mb-2">Bringing Complexity with Variables</h4>
@@ -151,25 +144,25 @@ const FAST_TIME: float = 1</code></pre>
                     <p>
                         I used conditional statements to determine how time should affect the player and the game world based on player input. The game checks which direction the player is moving, and if they are pressing the "walk left" or "walk right" buttons, it changes the <code>time_scale</code> accordingly. This allows the player to feel like they are directly controlling time.
                     </p>
-                    <pre class="code-block mt-3"><code>	if direction:
-		velocity.x = direction * walkspeed * time_scale
-		
-		if Input.is_action_pressed("walk_L"):
-			time = 1
-			time_scale = SLOW_TIME
-			set_vignette(slow_vignette, 0.28)
-		elif Input.is_action_pressed("walk_R"):
-			time = 3
-			time_scale = FAST_TIME
-			set_vignette(fast_vignette, 0.28)
-			
-		anims.play("move")
-	else:
-		time = 2
-		time_scale = NORMAL_TIME
-		velocity.x = move_toward(velocity.x, 0, walkspeed)
-		anims.play("idle")
-		set_vignette(null, 0)</code></pre>
+                    <pre class="code-block mt-3"><code> if direction:
+        velocity.x = direction * walkspeed * time_scale
+        
+        if Input.is_action_pressed("walk_L"):
+            time = 1
+            time_scale = SLOW_TIME
+            set_vignette(slow_vignette, 0.28)
+        elif Input.is_action_pressed("walk_R"):
+            time = 3
+            time_scale = FAST_TIME
+            set_vignette(fast_vignette, 0.28)
+            
+        anims.play("move")
+    else:
+        time = 2
+        time_scale = NORMAL_TIME
+        velocity.x = move_toward(velocity.x, 0, walkspeed)
+        anims.play("idle")
+        set_vignette(null, 0)</code></pre>
                 </div>
                 <div>
                     <h4 class="font-bold text-xl mb-2">Simplifying Code with Functions</h4>
@@ -177,17 +170,17 @@ const FAST_TIME: float = 1</code></pre>
                         Functions were essential for managing the complexity of the levels. For example, I created a function called <code>spawn_solid_row()</code> to automatically generate a row of solid blocks at certain points in the game. This provides the player with a short break from the moving platforms, and by putting this logic into a function, I avoided repeating the same code multiple times, making it much more efficient.
                     </p>
                     <pre class="code-block mt-3"><code>func spawn_solid_row(y: float):
-	var plat_width = 100 # Adjust this based on your solid platform's width
-	var screen_width = get_viewport().size.x
-	var num_platforms = ceil(screen_width / plat_width) + 1 # Spawn enough to cover the screen
-	
-	for i in range(int(num_platforms)):
-		var plat = solid_platform_scene.instantiate()
-		plat.position = Vector2(i * plat_width, y)
-		add_child(plat)
-		platforms.append(plat)
-	
-	trigger_screenshake(15.0, 0.3, 5.0) # Shake the screen to signal a new level</code></pre>
+    var plat_width = 100 # Adjust this based on your solid platform's width
+    var screen_width = get_viewport().size.x
+    var num_platforms = ceil(screen_width / plat_width) + 1 # Spawn enough to cover the screen
+    
+    for i in range(int(num_platforms)):
+        var plat = solid_platform_scene.instantiate()
+        plat.position = Vector2(i * plat_width, y)
+        add_child(plat)
+        platforms.append(plat)
+    
+    trigger_screenshake(15.0, 0.3, 5.0) # Shake the screen to signal a new level</code></pre>
                 </div>
                 <div>
                     <h4 class="font-bold text-xl mb-2">Using Arrays to Manage Platforms</h4>
@@ -198,10 +191,86 @@ const FAST_TIME: float = 1</code></pre>
                 </div>
             </div>
         </div>
+        
+        <div class="bg-blue-50 dark:bg-blue-900/40 rounded-xl p-6 mb-8 shadow-2xl border-2 border-blue-200 dark:border-blue-700">
+            <h3 class="font-bold text-3xl mb-4 text-blue-600 dark:text-blue-400">🎶 Ex-BoBomb On Time</h3>
+            
+            <h4 class="font-bold text-xl mb-2 mt-4 text-gray-900 dark:text-white">Project Overview</h4>
+            <p class="text-lg">
+                I was tasked with creating a game based on popular books in our school library. I chose to build **Ex-BoBomb On Time**, a **rhythm-based fighting game** inspired by the fast-paced action and musical themes of the *Scott Pilgrim* graphic novels. My design philosophy was centered on translating the core comic-book combat experience into a tight, rhythmic loop where timing is everything. I programmed the majority of the game's mechanics myself, with asset and minor logic assistance from a teammate.
+            </p>
+
+            <h4 class="font-bold text-xl mb-2 mt-6 text-gray-900 dark:text-white">Retrospective & My Contribution</h4>
+            <p class="text-lg mb-4">
+                I focused on building the core rhythm-combat engine, the health/damage system, and the hit-detection logic. If I could do this project again, I would prioritize **laying out the game's structure better before writing core logic** or giving myself more time for pre-production. A clearer architectural plan would have prevented some technical debt later in development.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-6">
+                <div>
+                    <h4 class="font-bold text-xl mb-2">Project Poster</h4>
+                    <img src="https://placehold.co/400x300/60A5FA/ffffff?text=Project+Poster+Image" alt="Ex-BoBomb On Time Poster" class="w-full h-auto rounded-lg shadow-lg border border-gray-200 dark:border-gray-600">
+                    <p class="text-xs text-center mt-2 text-gray-500 dark:text-gray-400">Placeholder for the Project Poster.</p>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold text-xl mb-2">Play the Game (Coming Soon!)</h4>
+                    <iframe frameborder="0" src="https://itch.io/embed/0000000" width="100%" height="167" class="mt-2 rounded-lg shadow-inner bg-gray-200 dark:bg-gray-700">
+                        <a href="#">Ex-BoBomb On Time by Zeke (Itch.io link placeholder)</a>
+                    </iframe>
+                    <p class="text-xs text-center mt-2 text-gray-500 dark:text-gray-400">The game will be available here soon!</p>
+                </div>
+            </div>
+
+            <div class="mt-8 space-y-6">
+                <h4 class="font-bold text-2xl mb-4 text-gray-900 dark:text-white">Technical Breakdown (GDScript)</h4>
+                
+                <div>
+                    <h4 class="font-bold text-xl mb-2">Key Variable: Global.onBeat</h4>
+                    <p>
+                        The **<code>Global.onBeat</code>** variable is fundamental to the rhythm mechanic. It is a boolean (`true`/`false`) that acts as a gate. When `true`, the player's attacks can land; when `false`, any attack will register as a miss. This simple variable is responsible for enforcing the core **rhythm challenge** of the game.
+                    </p>
+                    <pre class="code-block mt-3"><code>var onBeat = false  # Initial state
+# This variable changes state on every beat of the music timer.</code></pre>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold text-xl mb-2">Conditional Logic: Screen Boundaries</h4>
+                    <p>
+                        This conditional statement checks if the player's position on the x-axis is too far to the left (off-screen). If the condition is met, it uses **lerping (linear interpolation)** to smoothly pull the player back into the visible game area. This sophisticated logic makes the game more complex by preventing players from leaving the arena, which is crucial for a 2D fighting environment.
+                    </p>
+                    <pre class="code-block mt-3"><code>if (position.x < -42 + off_screen_lerp):
+    # Logic to move the character back onto the screen smoothly</code></pre>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold text-xl mb-2">Streamlined Function: take_dmg()</h4>
+                    <p>
+                        The **<code>take_dmg()</code>** function centralizes all the logic for when an entity takes damage. This is highly effective because it prevents code repetition across multiple enemy and player scripts. It handles four key actions at once: **instantiating a damage label**, **updating the health value**, **applying a damage number**, and **updating the score** (with a difficulty bonus). This makes the code much cleaner and easier to read.
+                    </p>
+                    <pre class="code-block mt-3"><code>func take_dmg() -> void:
+    var damage_label = damageLabelScene.instantiate()
+    damage_label.global_position = self.position
+    damage_label.set_damage(damage)
+    damage_label.z_index = 100
+    health -= damage
+    if (Global.diff == Global.Difficulty.PRO):
+        Global.score += damage * 1.5
+    else:
+        Global.score += damage</code></pre>
+                </div>
+
+                <div class="bg-gray-100 dark:bg-gray-700 p-4 rounded-lg">
+                    <h4 class="font-bold text-xl mb-2">CAD Model (Future Asset)</h4>
+                    <p>
+                        *I am planning to create a 3D model (CAD) for a key in-game asset (e.g., a pixel-perfect energy sword or a unique prop). Once the model is complete, the render and a link to the CAD file (Onshape/GrabCAD) will be placed here to demonstrate my mechanical design skills.*
+                    </p>
+                    <a href="#" class="text-sm text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-500 font-semibold underline mt-2 inline-block">CAD Link Placeholder</a>
+                </div>
+            </div>
+        </div>
 
         <hr class="my-12 border-t-2 border-gray-200 dark:border-gray-700">
 
-        <!-- Contact Section -->
         <div class="text-center">
             <h2 class="section-heading inline-block">Contact</h2>
             <div class="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-8 mt-4 text-lg">
